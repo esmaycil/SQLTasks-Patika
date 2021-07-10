@@ -26,6 +26,8 @@ WHERE replacement_cost = (SELECT MIN(replacement_cost) FROM film)
 
 --4. payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
 
-SELECT first_name,last_name,payment.customer_id FROM customer
-INNER JOIN payment ON payment.customer_id = customer.customer_id;
----???
+SELECT COUNT(*) alisveris, first_name, last_name FROM payment
+JOIN customer ON payment.customer_id = customer.customer_id
+group by first_name,last_name
+ORDER BY alisveris DESC;
+
