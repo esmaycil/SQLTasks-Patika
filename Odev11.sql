@@ -19,14 +19,14 @@ except
 --4. ilk üç sorguyu tekrar eden veriler için de yapalım.
 -- actor ve customer tablolarındaki last_namelerin karşılaştırılması
 
-(SELECT last_name FROM actor)
-UNION
-(SELECT last_name FROM customer);
+(SELECT first_name FROM actor)
+UNION ALL
+(SELECT first_name FROM customer);
 
-(SELECT last_name FROM actor)
+(SELECT first_name FROM actor)
 INTERSECT
-(SELECT last_name FROM customer);
+(SELECT first_name FROM customer);
 
-(SELECT last_name FROM actor)
-EXCEPT
-(SELECT last_name FROM customer);
+(SELECT first_name FROM actor)
+EXCEPT ALL
+(SELECT first_name FROM customer);
